@@ -1,8 +1,9 @@
 import axiosClient from "@/lib/axiosClient";
 
-const authService = {
-    getPost: () => axiosClient.get(`/post/getPost`),
-    getPostUserId: (id: string) => axiosClient.get(`/post/getPost/${id}`),
+const postService = {
+    getPost: () => axiosClient.get(`/admins/home`),
+    getPostUserId: (id: string, page = 1, limit = 10) =>
+        axiosClient.get(`/admins/detail`, { params: { userId: id, page, limit } }),
 };
 
-export default authService;
+export default postService;

@@ -7,7 +7,6 @@ export default async function AdminPage() {
   try {
     if (userCookie && userCookie !== "[object Object]") {
       user = JSON.parse(userCookie);
-      console.log('✅ Cookie user:', user);
     }
   } catch (error) {
     console.error("❌ Lỗi parse cookie:", error);
@@ -16,10 +15,9 @@ export default async function AdminPage() {
   if (!user) {
     return <div>Chưa đăng nhập hoặc cookie lỗi!</div>;
   }
-
   return (
     <div>
-      <UserClient id = {String(user.id)} />
+      <UserClient id={String(user.id)} />
     </div>
   );
 }

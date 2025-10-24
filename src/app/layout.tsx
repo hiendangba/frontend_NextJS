@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+'use client';
 import AppHeader from "@/components/app.header";
 import "./globals.css";
 export default function RootLayout({
