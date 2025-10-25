@@ -13,9 +13,6 @@ export default function PostDetailPage() {
 
     return (
         <div>
-            <h1 className="text-2xl font-semibold mb-4 text-center">
-                Bài viết của user: {userId}
-            </h1>
             <FeedClient userId={userId} />
         </div>
     );

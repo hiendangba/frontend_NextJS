@@ -23,7 +23,7 @@ export default function CommentItemViewer({
           src={
             comment.user?.avatarUrl ||
             comment.user?.avatar ||
-            AltAvatar
+            AltAvatar.src
           }
           size="sm"
           variant="circle"
@@ -32,11 +32,10 @@ export default function CommentItemViewer({
 
         <div className="flex-1">
           <div
-            className={`rounded-lg p-3 ${
-              isNested
+            className={`rounded-lg p-3 ${isNested
                 ? "bg-gray-50 border-l-2 border-blue-200"
                 : "bg-gray-100"
-            }`}
+              }`}
           >
             <p className="font-medium text-sm">{comment.user?.name}</p>
             <p className="text-sm mt-1">{comment.content}</p>

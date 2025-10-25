@@ -3,6 +3,7 @@ import UserClient from "@/components/app.userClient";
 export default async function AdminPage() {
   const cookieStore = await cookies();
   const userCookie = cookieStore.get("user")?.value;
+  console.log("🍀 Cookie user:", userCookie);
   let user = null;
   try {
     if (userCookie && userCookie !== "[object Object]") {
