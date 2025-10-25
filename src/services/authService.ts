@@ -1,7 +1,7 @@
 import axiosClient from "@/lib/axiosClient";
 
 const authService = {
-    getTokenById: (id: string) => axiosClient.post(`/auth/getToken`, { id }),
+    getTokenById: (userId: string) => axiosClient.post(`/auth/getToken`, {  userId }),
 };
 
 export default authService;

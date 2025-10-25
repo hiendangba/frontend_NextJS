@@ -1,12 +1,22 @@
 'use client';
+
 import { useSearchParams } from 'next/navigation';
-import { usePostsByUser } from '@/hooks/useUser'
-const PostDetailPage = () => {
+import FeedClient from '../postDisplay/FeedClient';
+
+export default function PostDetailPage() {
     const searchParams = useSearchParams();
     const userId = searchParams.get('userId');
-    const { data, error, isLoading } = usePostsByUser(userId);
-    console.log(data);
-    return <div>Chi tiết bài viết của user: {userId}</div>;
-};
 
-export default PostDetailPage;
+    if (!userId) {
+        return <p className="text-red-500 p-4">Thiếu userId</p>;
+    }
+
+    return (
+        <div>
+            <h1 className="text-2xl font-semibold mb-4 text-center">
+                Bài viết của user: {userId}
+            </h1>
+            <FeedClient userId={userId} />
+        </div>
+    );
+}
